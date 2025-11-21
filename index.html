@@ -178,13 +178,24 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition hover:-translate-y-1 group">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center text-xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Torre de Controle com IA</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Gestão centralizada e inteligente. Nossa IA monitora todas as entregas e avisa você automaticamente se algo sair do padrão, antes do problema acontecer.
+                    </p>
+                </div>
+
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition hover:-translate-y-1 group">
                     <div class="w-12 h-12 bg-blue-50 text-zapBlue rounded-lg flex items-center justify-center text-xl mb-6 group-hover:bg-zapBlue group-hover:text-white transition">
                         <i class="fa-solid fa-camera"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Foto do Comprovante</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        O motorista tira foto do papel assinado e manda no Zap. O sistema salva tudo. Nunca mais fique sem receber porque perdeu o canhoto.
+                        O motorista tira foto do papel assinado e manda no Zap. O sistema organiza e salva tudo. Nunca mais fique sem receber porque perdeu o canhoto.
                     </p>
                 </div>
 
@@ -197,3 +208,132 @@
                         O motorista não gosta de digitar? Sem problemas. Ele manda um áudio falando o que aconteceu e nosso sistema entende e anota para você.
                     </p>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="cliente" class="py-24 bg-white overflow-hidden border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide border border-green-100 mb-6">
+                        <i class="fa-solid fa-eye"></i> Visibilidade Total
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        Seu cliente vê o motorista chegando.<br>
+                        <span class="text-zapBlue">E para de ligar para o SAC.</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Chega de ansiedade. O RouteZap envia um link automático no WhatsApp do seu cliente assim que a entrega sai. Ele acompanha tudo em tempo real.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-zapBlue shrink-0">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-lg">Mapa em Tempo Real</h3>
+                                <p class="text-sm text-slate-500">Igual ao iFood ou Uber. O cliente vê o caminhãozinho se movendo no mapa até a porta dele.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-600 shrink-0">
+                                <i class="fa-regular fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-lg">Previsão Exata (ETA)</h3>
+                                <p class="text-sm text-slate-500">"Seu pedido chega entre 14:30 e 15:00". Isso reduz drasticamente as falhas por ausência.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="rastreio.html" target="_blank" class="inline-flex items-center gap-2 text-zapBlue font-bold hover:underline">
+                            Ver modelo da página de rastreio <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <div class="relative w-72 bg-slate-900 rounded-[2.5rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden">
+                        <div class="bg-gray-50 h-full pb-8">
+                            <div class="bg-zapBlue p-4 text-white text-center pt-8">
+                                <p class="text-xs opacity-80">Pedido #9021</p>
+                                <p class="font-bold">Chegando em 15 min</p>
+                            </div>
+                            <div class="h-40 bg-blue-100 relative w-full">
+                                <div class="absolute inset-0 flex items-center justify-center text-zapBlue/30 text-4xl">
+                                    <i class="fa-solid fa-map"></i>
+                                </div>
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg text-zapBlue">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                                    <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                                    <div>
+                                        <p class="text-sm font-bold">Motorista Carlos</p>
+                                        <p class="text-xs text-gray-500">Placa ABC-1234</p>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button class="bg-green-500 text-white w-full py-2 rounded-lg text-sm font-bold">
+                                        <i class="fa-brands fa-whatsapp"></i> Falar com Motorista
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div class="bg-slate-900 rounded-xl shadow-2xl p-2 relative transform hover:scale-105 transition duration-500">
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm cursor-pointer hover:scale-110 transition">
+                        <i class="fa-solid fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Motorista usando celular" class="rounded-lg opacity-80 hover:opacity-100 transition duration-500">
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold uppercase mb-4">
+                    Sem reclamação
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">"Meu motorista não sabe mexer em tecnologia..."</h2>
+                <p class="text-slate-600 text-lg mb-6">
+                    Não precisa saber. Se ele sabe mandar "Bom dia" no grupo da família, ele sabe usar o RouteZap.
+                </p>
+                <ul class="check-list space-y-3 text-slate-700 font-medium">
+                    <li>Nada de baixar aplicativo que trava o celular.</li>
+                    <li>Sem login e senha complicados.</li>
+                    <li>É só responder o WhatsApp da empresa.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="teste" class="py-24 gradient-bg text-white text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">Pronto para assumir o controle?</h2>
+            <p class="text-lg text-blue-100 mb-10">Crie sua conta agora e veja as primeiras baixas chegando em menos de 10 minutos.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-zapGreen hover:bg-green-500 text-white text-xl px-10 py-5 rounded-full font-bold transition shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    Começar Teste Grátis <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <p class="mt-12 text-sm text-slate-400/60">© 2024 RouteZap Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
