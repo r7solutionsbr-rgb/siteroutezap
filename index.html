@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapRoute - Controle Logístico via WhatsApp</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zapBlue: '#2563eb',
+                        zapGreen: '#25D366',
+                        darkGray: '#1e293b',
+                        lightGray: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="text-slate-700 bg-slate-50">
+
+    <nav class="w-full py-4 px-6 bg-white shadow-sm fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-zapBlue rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg relative overflow-hidden">
+                    Z<span class="text-zapGreen">R</span>
+                    <div class="absolute top-0 right-0 w-3 h-3 bg-zapGreen rounded-full animate-pulse"></div>
+                </div>
+                <span class="text-2xl font-bold text-zapBlue tracking-tight">ZapRoute</span>
+            </div>
+            <div class="hidden md:flex gap-6 items-center">
+                <a href="#funcionalidades" class="hover:text-zapBlue font-medium transition">Funcionalidades</a>
+                <a href="#como-funciona" class="hover:text-zapBlue font-medium transition">Como Funciona</a>
+                <a href="#teste" class="bg-zapGreen hover:bg-green-500 text-white px-6 py-2 rounded-full font-bold transition shadow-lg shadow-green-200 transform hover:-translate-y-0.5">
+                    Teste Grátis
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6 lg:px-0 bg-lightGray overflow-hidden">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6 animate-fade-in-up">
+                <span class="inline-block bg-blue-100 text-zapBlue px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider mb-2">
+                    <i class="fa-solid fa-circle-check mr-2"></i> A dor resolvida
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                    Diga adeus aos 30 minutos de <span class="text-zapBlue">ligações diárias.</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-slate-600 font-medium">
+                    ZapRoute: A Baixa de Entregas em Tempo Real que Ouve a Voz do Motorista.
+                </h2>
+                <p class="text-lg text-slate-500">
+                    Monitore suas rotas, confirme entregas e registre falhas em 5 segundos, usando apenas comandos de voz ou texto no <span class="text-zapGreen font-bold"><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button class="bg-zapBlue hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-lg font-bold transition shadow-xl shadow-blue-200 flex items-center justify-center gap-3">
+                        Teste Grátis (14 Dias) <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button class="border-2 border-slate-300 hover:border-zapBlue hover:text-zapBlue text-slate-600 px-8 py-4 rounded-lg font-bold transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-circle-play"></i> Ver Demo
+                    </button>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">* Sem cartão de crédito necessário para começar.</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -top-10 -right-10 w-72 h-72 bg-zapGreen/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-zapBlue/20 rounded-full blur-3xl"></div>
+                
+                <div class="relative z-10 bg-white rounded-xl shadow-2xl border border-slate-200 p-4 transform rotate-1 hover:rotate-0 transition duration-500">
+                    <div class="flex items-center gap-2 mb-4 border-b pb-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <div class="text-xs text-slate-400 ml-auto">Dashboard ZapRoute</div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between bg-slate-50 p-3 rounded border-l-4 border-zapGreen">
+                            <div>
+                                <div class="text-xs text-slate-500">Motorista: João Silva</div>
+                                <div class="font-bold text-slate-800">Nota #4021 - Entregue</div>
+                            </div>
+                            <div class="text-zapGreen font-bold text-sm flex items-center"><i class="fa-solid fa-check-double mr-1"></i> 14:32</div>
+                        </div>
+                        <div class="flex justify-between bg-slate-50 p-3 rounded border-l-4 border-red-500">
+                            <div>
+                                <div class="text-xs text-slate-500">Motorista: Carlos B.</div>
+                                <div class="font-bold text-slate-800">Nota #4025 - Cliente Ausente</div>
+                            </div>
+                            <div class="text-red-500 font-bold text-sm flex items-center"><i class="fa-solid fa-triangle-exclamation mr-1"></i> 14:45</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute -bottom-6 -left-6 w-48 bg-black rounded-[2rem] p-2 shadow-2xl border-4 border-slate-800 transform -rotate-3 hover:rotate-0 transition duration-500">
+                    <div class="bg-gray-900 rounded-[1.5rem] h-full overflow-hidden relative">
+                        <div class="bg-[#075E54] p-3 flex items-center gap-2">
+                            <div class="w-6 h-6 bg-white rounded-full"></div>
+                            <div class="text-white text-xs font-bold">ZapRoute Bot</div>
+                        </div>
+                        <div class="p-3 space-y-2 bg-[#ECE5DD] h-40 text-[10px]">
+                            <div class="bg-white p-2 rounded-lg rounded-tl-none shadow self-start w-3/4">
+                                Olá João! Qual o status da entrega #4021?
+                            </div>
+                            <div class="bg-[#dcf8c6] p-2 rounded-lg rounded-tr-none shadow self-end ml-auto w-3/4 flex items-center gap-2">
+                                <i class="fa-solid fa-microphone text-zapGreen"></i> Áudio (0:05)
+                                <br>"Entreguei a nota 4021 agora"
+                            </div>
+                            <div class="bg-white p-2 rounded-lg rounded-tl-none shadow self-start w-3/4 text-zapBlue font-bold">
+                                <i class="fa-solid fa-check"></i> Confirmado! Dashboard atualizado.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">A Evolução da sua Logística</h2>
+                <p class="text-slate-500 mt-4 text-lg">Veja a diferença entre o caos manual e a automação inteligente.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="border border-slate-200 rounded-2xl p-8 bg-slate-50 opacity-90 hover:opacity-100 transition">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-xl">
+                            <i class="fa-solid fa-thumbs-down"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-700">Sua Logística Hoje</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span class="text-slate-600">Apps complexos que os motoristas se recusam a usar ou "esquecem".</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span class="text-slate-600">Pilhas de canhotos e digitação manual em planilhas no fim do dia.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                            <span class="text-slate-600">Ocorrências e devoluções só são descobertas quando o caminhão volta.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-2 border-zapGreen/30 rounded-2xl p-8 bg-white shadow-xl transform md:-translate-y-4 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-zapGreen text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMENDADO</div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-zapGreen text-xl">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Com ZapRoute</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-zapGreen mt-1"></i>
+                            <span class="text-slate-800 font-medium"><strong>WhatsApp Nativo:</strong> O motorista usa o app que ele já domina e adora.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-zapGreen mt-1"></i>
+                            <span class="text-slate-800 font-medium"><strong>Importação Inteligente:</strong> Carregue milhares de pedidos com um único Excel.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-zapGreen mt-1"></i>
+                            <span class="text-slate-800 font-medium"><strong>Monitoramento Imediato:</strong> Status da entrega no seu painel em tempo real.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="funcionalidades" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-zapGreen font-bold tracking-wider uppercase text-sm">Tecnologia de Ponta</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Por que o ZapRoute é Diferente?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-slate-800 p-8 rounded-2xl hover:bg-slate-750 transition border border-slate-700">
+                    <div class="w-14 h-14 bg-zapBlue/20 text-zapBlue rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Comando de Voz (IA)</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Nosso sistema usa IA (Gemini) para transcrever o áudio do motorista. Ele extrai o número da nota e o status com precisão, sem digitação.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl hover:bg-slate-750 transition border border-slate-700">
+                    <div class="w-14 h-14 bg-zapGreen/20 text-zapGreen rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dashboard de Controle</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Painel visual intuitivo. Veja a lista de rotas importadas, status (Entregue, Falha) e o mapa de entregas em tempo real.
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 p-8 rounded-2xl hover:bg-slate-750 transition border border-slate-700">
+                    <div class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Setup em Minutos</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Integração imediata com Z-API. Comece a receber informações do seu primeiro motorista em menos de 10 minutos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Simples como enviar uma mensagem</h2>
+                <p class="text-slate-500 mt-4">Fluxo de 3 etapas para assumir o controle.</p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-slate-200 transform -translate-x-1/2 z-0"></div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-12 md:mb-0">
+                    <div class="md:w-5/12 text-center md:text-right order-2 md:order-1 p-4">
+                        <h3 class="text-xl font-bold text-zapBlue">1. Preparar</h3>
+                        <p class="text-slate-600 mt-2">Importe sua planilha (.xlsx) com CNPJ, Placa e Motorista para o sistema.</p>
+                    </div>
+                    <div class="w-12 h-12 bg-white border-4 border-zapBlue rounded-full flex items-center justify-center font-bold text-slate-700 shadow mb-4 md:mb-0 order-1 md:order-2">1</div>
+                    <div class="md:w-5/12 order-3 md:order-3 p-4"></div>
+                </div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-12 md:mb-0">
+                    <div class="md:w-5/12 order-3 md:order-1 p-4"></div>
+                    <div class="w-12 h-12 bg-white border-4 border-zapGreen rounded-full flex items-center justify-center font-bold text-slate-700 shadow mb-4 md:mb-0 order-1 md:order-2">2</div>
+                    <div class="md:w-5/12 text-center md:text-left order-2 md:order-3 p-4">
+                        <h3 class="text-xl font-bold text-zapGreen">2. Agir</h3>
+                        <p class="text-slate-600 mt-2">O motorista envia um áudio ("Entreguei a nota 500") para o WhatsApp da empresa.</p>
+                    </div>
+                </div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 text-center md:text-right order-2 md:order-1 p-4">
+                        <h3 class="text-xl font-bold text-indigo-600">3. Controlar</h3>
+                        <p class="text-slate-600 mt-2">O status da entrega no seu painel ZapRoute atualiza instantaneamente.</p>
+                    </div>
+                    <div class="w-12 h-12 bg-white border-4 border-indigo-600 rounded-full flex items-center justify-center font-bold text-slate-700 shadow mb-4 md:mb-0 order-1 md:order-2">3</div>
+                    <div class="md:w-5/12 order-3 md:order-3 p-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="teste" class="py-24 gradient-bg text-white text-center px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Não perca mais tempo.</h2>
+            <p class="text-xl text-blue-100 mb-10">Comece a gerir suas rotas de forma inteligente hoje mesmo.</p>
+            
+            <button class="bg-zapGreen hover:bg-green-500 text-white text-xl px-10 py-5 rounded-full font-bold transition shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-3 mx-auto">
+                Começar Teste Grátis <span class="text-sm font-normal opacity-80">(Sem Compromisso)</span>
+            </button>
+            
+            <p class="mt-8 text-sm opacity-50">© 2023 ZapRoute Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
