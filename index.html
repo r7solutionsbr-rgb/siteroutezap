@@ -48,6 +48,14 @@
             left: 0;
             color: #25D366;
         }
+        /* Animação Suave para o Mockup do GPS */
+        @keyframes pulse-route {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .animate-pulse-route {
+            animation: pulse-route 2s infinite;
+        }
     </style>
 </head>
 <body class="text-slate-700 bg-white antialiased">
@@ -61,7 +69,8 @@
                 <span class="text-xl font-bold text-slate-800 tracking-tight">RouteZap</span>
             </div>
             <div class="hidden md:flex gap-8 items-center text-sm font-medium text-slate-600">
-                <a href="#diferenciais" class="hover:text-zapBlue transition">Como Funciona</a>
+                <a href="#funcionalidades" class="hover:text-zapBlue transition">Recursos</a>
+                <a href="#cliente" class="hover:text-zapBlue transition">Rastreio</a>
                 <a href="#precos" class="hover:text-zapBlue transition">Preços</a>
                 <a href="#teste" class="bg-zapBlue hover:bg-zapDarkBlue text-white px-5 py-2.5 rounded-lg font-bold transition shadow-lg shadow-blue-200">
                     Criar Conta Grátis
@@ -162,7 +171,7 @@
         </div>
     </header>
 
-    <section id="diferenciais" class="py-24 bg-slate-50">
+    <section id="funcionalidades" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Tudo o que você precisa, sem complicação</h2>
@@ -191,4 +200,237 @@
                 </div>
 
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition hover:-translate-y-1 group">
-                    <div class="w-12 h-12 bg-purple-50 text-purple-6
+                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center text-xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Use suas Planilhas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Não precisa cadastrar entrega por entrega. Pegue sua planilha do Excel, jogue no sistema e ele avisa todos os motoristas de uma vez.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cliente" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide border border-green-100 mb-6">
+                        <i class="fa-solid fa-heart"></i> Cliente Satisfeito
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        Seu cliente informado.<br>
+                        <span class="text-zapBlue">Seu telefone mudo.</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Acabe com as ligações perguntando "Que horas chega?". O RouteZap envia atualizações automáticas para quem está esperando a encomenda.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-zapBlue shrink-0">
+                                <i class="fa-solid fa-map-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-lg">Rastreio em Tempo Real</h3>
+                                <p class="text-sm text-slate-500">Seu cliente recebe um link no Zap e vê que o pedido já saiu para entrega, sem precisar te ligar.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-600 shrink-0">
+                                <i class="fa-regular fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-lg">Previsão de Chegada (ETA)</h3>
+                                <p class="text-sm text-slate-500">O sistema avisa: "O motorista Carlos chegará entre 14:30 e 15:00". Isso reduz 90% das falhas por ausência.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center text-yellow-600 shrink-0">
+                                <i class="fa-regular fa-star text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-lg">Avaliação da Entrega</h3>
+                                <p class="text-sm text-slate-500">Assim que entrega, o cliente avalia o motorista. Descubra quem trata bem sua mercadoria e seu cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 relative flex justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-b from-zapBlue/10 to-white rounded-full blur-3xl -z-10 transform scale-90"></div>
+
+                    <div class="w-72 bg-slate-900 rounded-[2.5rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden relative z-10">
+                        <div class="h-6 bg-slate-900 flex items-center justify-between px-4 pt-1">
+                            <div class="text-[10px] text-white font-bold">14:32</div>
+                            <div class="flex gap-1">
+                                <div class="w-3 h-3 bg-white rounded-full opacity-20"></div>
+                                <div class="w-3 h-3 bg-white rounded-full opacity-20"></div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 h-full pb-8">
+                            <div class="h-48 bg-blue-100 relative overflow-hidden">
+                                <div class="absolute top-0 bottom-0 left-10 w-4 bg-white"></div>
+                                <div class="absolute top-20 left-0 right-0 h-4 bg-white"></div>
+                                <div class="absolute top-24 left-20 text-red-500 text-2xl drop-shadow-lg"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="absolute top-10 left-10 text-zapBlue text-xl drop-shadow-lg animate-pulse-route"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="absolute bottom-2 right-2 bg-white px-2 py-1 rounded text-[8px] font-bold text-slate-500 shadow">Google Maps</div>
+                            </div>
+
+                            <div class="bg-white rounded-t-2xl -mt-4 relative z-10 p-5 shadow-lg">
+                                <div class="w-12 h-1 bg-slate-200 rounded-full mx-auto mb-4"></div>
+                                
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <p class="text-xs text-slate-500 uppercase font-bold">Previsão</p>
+                                        <p class="text-xl font-bold text-slate-800">14:45 - 15:00</p>
+                                    </div>
+                                    <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                                        Em Rota
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+                                    <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Motorista" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-slate-900">Carlos (Motorista)</p>
+                                        <p class="text-xs text-slate-500">Placa: ABC-1234</p>
+                                    </div>
+                                    <div class="ml-auto bg-zapGreen text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 cursor-pointer transition">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                </div>
+
+                                <div class="mt-6 space-y-4 pl-2">
+                                    <div class="flex gap-3 relative">
+                                        <div class="w-2 h-2 bg-zapBlue rounded-full mt-1.5 relative z-10"></div>
+                                        <div class="absolute top-2 left-1 bottom-[-20px] w-0.5 bg-slate-200"></div>
+                                        <div>
+                                            <p class="text-xs font-bold text-slate-800">Saiu para Entrega</p>
+                                            <p class="text-[10px] text-slate-400">13:30 • CD Logística</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3 relative">
+                                        <div class="w-2 h-2 bg-slate-300 rounded-full mt-1.5 relative z-10"></div>
+                                        <div>
+                                            <p class="text-xs font-bold text-slate-400">Entregue</p>
+                                            <p class="text-[10px] text-slate-400">Aguardando...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div class="bg-slate-900 rounded-xl shadow-2xl p-2 relative transform hover:scale-105 transition duration-500">
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm cursor-pointer hover:scale-110 transition">
+                        <i class="fa-solid fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Motorista usando celular" class="rounded-lg opacity-80 hover:opacity-100 transition duration-500">
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-bold uppercase mb-4">
+                    Sem reclamação
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">"Meu motorista não sabe mexer em tecnologia..."</h2>
+                <p class="text-slate-600 text-lg mb-6">
+                    Não precisa saber. Se ele sabe mandar "Bom dia" no grupo da família, ele sabe usar o RouteZap.
+                </p>
+                <ul class="check-list space-y-3 text-slate-700 font-medium">
+                    <li>Nada de baixar aplicativo que trava o celular.</li>
+                    <li>Sem login e senha complicados.</li>
+                    <li>É só responder o WhatsApp da empresa.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="precos" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Quanto custa?</h2>
+                <p class="text-slate-400">Preço justo pelo tamanho da sua frota. Cancele quando quiser.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center">
+                
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-slate-500 transition">
+                    <h3 class="text-lg font-medium text-slate-300">Iniciante</h3>
+                    <div class="my-6">
+                        <span class="text-4xl font-bold">R$ 197</span><span class="text-slate-500">/mês</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-6 border-b border-slate-700 pb-6">Para quem está organizando a casa.</p>
+                    <ul class="space-y-4 text-sm text-slate-300 mb-8">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-zapGreen"></i> Até <strong>300 entregas/mês</strong></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-zapGreen"></i> Painel de Controle</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-zapGreen"></i> Suporte por Email</li>
+                    </ul>
+                    <a href="#teste" class="block w-full py-3 border border-slate-600 rounded-lg text-center hover:bg-slate-700 font-bold transition">Começar Teste</a>
+                </div>
+
+                <div class="bg-gradient-to-b from-zapBlue to-indigo-700 rounded-2xl p-8 border-2 border-blue-400 transform md:-translate-y-4 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-bl-lg">MAIS VENDIDO</div>
+                    <h3 class="text-lg font-bold text-white">Profissional</h3>
+                    <div class="my-6">
+                        <span class="text-5xl font-bold">R$ 497</span><span class="text-blue-200">/mês</span>
+                    </div>
+                    <p class="text-sm text-blue-100 mb-6 border-b border-blue-500/30 pb-6">Para frotas ativas que precisam de agilidade.</p>
+                    <ul class="space-y-4 text-sm text-white mb-8">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-yellow-400"></i> Até <strong>2.000 entregas/mês</strong></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-yellow-400"></i> <strong>Leitura de Áudio (IA)</strong></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-yellow-400"></i> Foto do Comprovante</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-yellow-400"></i> Suporte Prioritário</li>
+                    </ul>
+                    <a href="#teste" class="block w-full py-4 bg-white text-zapBlue rounded-lg text-center hover:bg-gray-50 font-bold transition shadow-lg">Testar Grátis (14 dias)</a>
+                </div>
+
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-slate-500 transition">
+                    <h3 class="text-lg font-medium text-slate-300">Grandes Frotas</h3>
+                    <div class="my-6">
+                        <span class="text-4xl font-bold">Sob Consulta</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-6 border-b border-slate-700 pb-6">Acima de 2.000 entregas ou integração com TMS.</p>
+                    <ul class="space-y-4 text-sm text-slate-300 mb-8">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-zapGreen"></i> Volume Livre</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-zapGreen"></i> Integração com seu Sistema</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-zapGreen"></i> Atendimento Exclusivo</li>
+                    </ul>
+                    <a href="https://wa.me/5500000000000" class="block w-full py-3 border border-slate-600 rounded-lg text-center hover:bg-slate-700 font-bold transition">Falar com Consultor</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="teste" class="py-20 bg-slate-50 text-center border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Teste agora, sem compromisso.</h2>
+            <p class="text-lg text-slate-600 mb-8">Crie sua conta em 30 segundos e veja como é fácil controlar sua frota.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-zapGreen hover:bg-green-600 text-white text-xl px-10 py-4 rounded-lg font-bold transition shadow-lg flex items-center justify-center gap-3">
+                    Criar Conta Grátis <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <p class="mt-6 text-sm text-slate-400">© 2024 RouteZap Tecnologia.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
